@@ -23,12 +23,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "html-escaper": "^3.0.3",
     "umap": "^1.0.2"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@hono/node-server": "^1.2.0",
     "@types/html-escaper": "^3.0.1",
     "@types/node": "^20.8.8",

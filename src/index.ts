@@ -1,5 +1,5 @@
 import { escape } from "html-escaper";
-import umap from "umap";
+// import umap from "umap";
 
 export type Template = Iterable<string | Promise<Template>>;
 
@@ -13,18 +13,18 @@ const deferredTemplates: Promise<Template>[] = [];
 
 // const cache = umap(new WeakMap());
 
+// const {length} = values;
+// const updates = cache.get(parts) || parse;
+
+// if (length) {
+//   yield* values.map(update, updates);
+// }
+
 export function* html(parts: TemplateStringsArray, ...values: any[]): Template {
-  // const {length} = values;
-  // const updates = cache.get(parts) || parse;
-
-  // if (length) {
-  //   yield* values.map(update, updates);
-  // }
-
   let i = 0;
 
   while (i < parts.length - 1) {
-    const part = parts[i];
+    const part = parts[i] as string;
     yield part;
 
     const value = values[i];
@@ -63,7 +63,7 @@ export function* html(parts: TemplateStringsArray, ...values: any[]): Template {
     i++;
   }
 
-  yield parts[i];
+  yield parts[i] as string;
 }
 
 export interface Writable {
