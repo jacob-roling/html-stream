@@ -1,4 +1,4 @@
-![HTML Tagged Template Stream demo](./demo.webm)
+![HTML Tagged Template Stream demo](./demo.gif)
 
 # html-tagged-template-stream
 
