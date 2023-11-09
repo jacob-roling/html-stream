@@ -1,6 +1,20 @@
 # html-stream
 
-HTML generation with tagged template literals. Supports streaming and React style suspense.
+Streaming HTML generation with tagged template literals.
+
+## Features
+
+- Tagged template literals are converted to generators for lazy evalutation.
+- React style suspense.
+
+## Installation
+
+```bash
+npm install html-stream
+yarn install html-stream
+pnpm install html-stream
+bun add html-stream
+```
 
 ## Usage
 
@@ -12,6 +26,8 @@ const writable = process.stdout; // Could be anything with a 'write' method such
 render(process.stdout, html`<h1>Hello World it's ${new Date()}</h1>`);
 ```
 
+## Async templates
+
 Async templates are awaited blocking the renderer.
 
 ```js
@@ -19,6 +35,8 @@ import { render, html } from "html-stream";
 
 render(process.stdout, html`<h1>${Promise.resolve(html`Hi there`)}</h1>`);
 ```
+
+## Suspense
 
 Async templates may be deferred and a fallback rendered in their place. The renderer will send down a script to swap the async template result into the fallbacks location in the dom.
 
@@ -37,6 +55,8 @@ render(
 );
 ```
 
+## Arrays
+
 Arrays are expected to be arrays of Templates.
 
 ```js
@@ -51,3 +71,7 @@ render(
   </ul>`
 );
 ```
+
+## Syntax Highlighting
+
+For syntax highlighting in VSCode install the 'lit-html' extension by Matt Bierner;
