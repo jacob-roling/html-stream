@@ -7,13 +7,14 @@ Streaming HTML generation with tagged template literals.
 - Tagged template literals are converted to generators for lazy evalutation.
 - React style suspense.
 - Expressions are automatically escaped.
+- Automatic caching of static template parts with umap and WeakSet (coming soon hopefully)
 
 ## Installation
 
 ```bash
 npm install html-tagged-template-stream
-yarn install html-tagged-template-stream
-pnpm install html-tagged-template-stream
+yarn add html-tagged-template-stream
+pnpm add html-tagged-template-stream
 bun add html-tagged-template-stream
 ```
 
