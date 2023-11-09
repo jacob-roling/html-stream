@@ -22,7 +22,7 @@ const shoppingBag = () => html`<article>
 </article>`;
 
 export default (streamed = true) => html`<!DOCTYPE html>
-  <html lang="en">
+  <html lang="en" data-theme="dark">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,5 +76,10 @@ export default (streamed = true) => html`<!DOCTYPE html>
             `,
             4000
           )}
+      <style>
+        article {
+          margin: 0.5rem 0;
+        }
+      </style>
     </body>
   </html>`;

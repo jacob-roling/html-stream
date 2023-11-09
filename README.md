@@ -1,3 +1,5 @@
+![HTML Tagged Template Stream demo](./demo.webm)
+
 # html-tagged-template-stream
 
 Streaming HTML generation with tagged template literals.
