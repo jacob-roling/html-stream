@@ -46,6 +46,8 @@ export function* html(parts: TemplateStringsArray, ...values: any[]): Template {
             </script>`)
         )
       );
+    } else if (value instanceof SafeHTML) {
+      yield value.html;
     } else if (typeof value.then === "function") {
       yield value;
     } else if (valueType === "function") {
@@ -155,4 +157,16 @@ class Suspense {
 
 export function suspense(fallback: Template, asyncTemplate: Promise<Template>) {
   return new Suspense(fallback, asyncTemplate);
+}
+
+class SafeHTML {
+  constructor(html: string) {
+    this.html = html;
+  }
+
+  declare html: string;
+}
+
+export function safe(html: string) {
+  return new SafeHTML(html);
 }

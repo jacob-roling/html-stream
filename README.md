@@ -43,16 +43,17 @@ Async templates may be deferred and a fallback rendered in their place. The rend
 
 ```js
 import { render, html, suspense } from "html-tagged-template-stream";
+
 render(
   process.stdout,
-  html`<p>I will be rendered straight away</p>
+  html`<p>I will be rendered straight away.</p>
     ${suspense(
       html`I will be replaced in two seconds.`,
       new Promise((res) => {
         setTimeout(res(html`I am lazy loaded content.`), 2000);
       })
     )}
-    <p>I will also be rendered straight away</p>`
+    <p>I will also be rendered straight away.</p>`
 );
 ```
 
