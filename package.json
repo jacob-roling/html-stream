@@ -1,5 +1,5 @@
 {
-  "name": "html-stream",
+  "name": "html-tagged-template-stream",
   "version": "0.0.2",
   "description": "HTML generation with tagged template literals. Supports streaming and React style suspense.",
   "type": "module",

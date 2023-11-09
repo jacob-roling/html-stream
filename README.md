@@ -1,4 +1,4 @@
-# html-stream
+# html-tagged-template-stream
 
 Streaming HTML generation with tagged template literals.
 
@@ -11,16 +11,16 @@ Streaming HTML generation with tagged template literals.
 ## Installation
 
 ```bash
-npm install html-stream
-yarn install html-stream
-pnpm install html-stream
-bun add html-stream
+npm install html-tagged-template-stream
+yarn install html-tagged-template-stream
+pnpm install html-tagged-template-stream
+bun add html-tagged-template-stream
 ```
 
 ## Usage
 
 ```js
-import { render, html } from "html-stream";
+import { render, html } from "html-tagged-template-stream";
 
 const writable = process.stdout; // Could be anything with a 'write' method such as a HTTP Response or Writable Stream.
 
@@ -32,7 +32,7 @@ render(process.stdout, html`<h1>Hello World it's ${new Date()}</h1>`);
 Async templates are awaited blocking the renderer.
 
 ```js
-import { render, html } from "html-stream";
+import { render, html } from "html-tagged-template-stream";
 
 render(process.stdout, html`<h1>${Promise.resolve(html`Hi there`)}</h1>`);
 ```
@@ -42,7 +42,7 @@ render(process.stdout, html`<h1>${Promise.resolve(html`Hi there`)}</h1>`);
 Async templates may be deferred and a fallback rendered in their place. The renderer will send down a script to swap the async template result into the fallbacks location in the dom.
 
 ```js
-import { render, html, suspense } from "html-stream";
+import { render, html, suspense } from "html-tagged-template-stream";
 render(
   process.stdout,
   html`<p>I will be rendered straight away</p>
@@ -61,7 +61,7 @@ render(
 Arrays are expected to be arrays of Templates.
 
 ```js
-import { render, html } from "html-stream";
+import { render, html } from "html-tagged-template-stream";
 
 const fruit = ["apple", "banana", "pear"];
 
