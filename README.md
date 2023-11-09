@@ -6,6 +6,7 @@ Streaming HTML generation with tagged template literals.
 
 - Tagged template literals are converted to generators for lazy evalutation.
 - React style suspense.
+- Expressions are automatically escaped.
 
 ## Installation
 
