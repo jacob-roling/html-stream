@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "types": ["vite/client"]
+  },
+  "include": ["src", "test"]
+}
